@@ -1,0 +1,425 @@
+body {
+
+    background: url('./имж/фон2.jpg') no-repeat;
+    background-size: 100%;
+    /* height: 100%; */
+      
+    
+    
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 500px;
+    margin: -60px auto;
+    position: relative;
+    height: 600px;
+    margin-bottom: 100px;
+
+    
+}
+
+.progress {
+    position: absolute;
+    width: 136%;
+    margin: 110px auto;
+    height: 10px;
+    /* background: #000; */
+    border-radius: 5px;
+    cursor: pointer;
+    
+
+}
+
+
+progress::-webkit-progress-bar {
+    background: #e1e1e1;
+}
+
+progress::-webkit-progress-value {
+    background: #68b275;;
+
+}
+
+
+.wrap-player {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #e1e1e1;
+    border-radius: 40px;
+    width: 500px;
+    height: 80px;
+  
+    
+    position: relative;
+}
+.prev {
+    content: '';
+    
+    border: none;
+    position: absolute;
+    left: 10%;
+    
+   
+    color: #fff;
+    font-size: 23px;
+    width: 54px;
+    height: 54px;
+    
+    background: url('./имж/icon-set-player-124657.png');
+    background-position: 173px 566px;
+    background-size: 320%;
+    cursor: pointer;
+}
+
+.reset {
+    content: '';
+    
+    border: none;
+    position: absolute;
+    left: 30%;
+   
+    width: 54px;
+    height: 54px;
+    
+    background: url('./имж/icon-set-player-124657.png');
+    background-position: 0px 507px;
+    background-size: 320%;
+    cursor: pointer;
+}
+
+
+
+
+.play {
+    content: '';
+    position: absolute;
+    border: none;
+    left: 56%;
+    top: 84.5%;
+   
+    
+   
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    background-color: #e1e1e1;
+    background: url('./имж/icon-set-player-124657.png');
+    background-position: 235px 475px;
+    background-size: 350%;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.bufer {
+    position: absolute;
+    border: none;
+    left: 56%;
+    top: 84.5%;
+
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    background-color: #e1e1e1;
+    cursor: pointer;
+    
+
+}
+.stop {
+    content: '';
+    position: absolute;
+    border: none;
+    left: 56%;
+    top: 84.5%;
+    cursor: pointer;
+   
+    
+   
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    background-color: #e1e1e1;
+    background: url('./имж/icon-set-player-124657.png');
+    background-position: -131px 348px;
+    background-size: 350%;
+    z-index: 2;
+   
+  
+    display: none;
+}
+.next {
+    content: '';
+  
+    border: none;
+    position: absolute;
+    left: 80%;
+    cursor: pointer;
+    
+    background-color: #666;
+    color: #fff;
+    font-size: 23px;
+    width: 54px;
+    height: 54px;
+    background: url('./имж/icon-set-player-124657.png');
+    background-position: 54px 566px;
+    background-size: 320%;
+    
+}
+
+
+
+/* for playList */
+
+*{
+
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+   
+}
+
+.sidebar {
+    position: fixed;
+    width: 230px;
+    height: 90%;
+    background: #57626F;
+    border: 4px solid #E0E5E4;
+    border-radius: 10px;
+    left: -260px;
+    top: 10px;
+    padding-bottom: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+
+    
+
+    -moz-transition: all 600ms;
+    -webkit-transition: all 600ms;
+    transition: all 600ms;
+
+    /* display: none; */
+}
+
+.sidebar.active {
+left: 10px;
+
+
+}
+
+
+.menu-title {
+    text-align: center;
+    color: white;
+    font-size: 1.95em;
+    list-style: none;
+    padding: 25px 10px 10px 10px;
+}
+
+.list {
+    /* position: relative; */
+
+    width: 75%;
+    margin-left: 10%;
+    font-size: 1.1em;
+    list-style: none;
+    padding: 15px 10px;
+    color: #e0edfa;
+    cursor: pointer;
+    overflow: hidden;
+    
+ 
+    
+}
+
+
+
+/* .sidebar ul li:hover {
+    color: #59e9df;
+} */
+
+.btn-box {
+
+    position: relative;
+}
+
+.btn {
+
+    position: absolute;
+    left: -92px;
+    top: -65px;
+    background: #E0E5EA;
+    padding: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 32px;
+    height: 30px;
+
+}
+
+.btn:hover {
+
+    background: #556270;
+}
+
+.btn:hover span {
+
+    background: #fafafa;
+
+}
+
+.btn span {
+  
+
+    display: block;
+    width: 25px;
+    height: 4px;
+    background-color: #666;
+    margin: 4px;
+}
+.s-sp.active {
+    display: none;
+    
+    -moz-transition: all 600ms;
+    -webkit-transition: all 600ms;
+    transition: all 600ms;
+
+}
+.f-sp.active {
+    content: '';
+    position: absolute;
+    
+transform: rotate(45deg);
+top: 37%;
+left: 9%;
+width: 35px;
+
+
+-moz-transition: all 600ms;
+-webkit-transition: all 600ms;
+transition: all 600ms;
+
+
+
+}
+
+.t-sp.active {
+    transform: rotate(-45deg);
+    width: 35px;
+    bottom: 37%;
+    left: 9%;
+
+    content: '';
+    position: absolute;
+
+    
+    -moz-transition: all 600ms;
+    -webkit-transition: all 600ms;
+    transition: all 600ms;
+
+    
+
+}
+
+/* poster start */
+
+.wrapper {
+    display: flex;
+    width: 500px;
+    margin: 100px 180px;
+    position: absolute;
+    left: 28%;
+    top: -15%;
+    /* overflow: hidden; */
+}
+.row {
+   
+    
+    display: flex;
+    position: absolute;
+    
+}
+.item {
+    
+    width: 150px;
+    height: 150px;
+   
+}
+
+
+.wrap {
+
+    width: 200px;
+    height: 235px;
+    background-color: #e1e1e1;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 20px;
+    position: relative;
+   
+}
+
+.poster-autor {
+    color: black;
+    font-size: 16px;
+    
+    top: 14px; 
+    text-align: center;
+    width: 180px;
+   
+    position: absolute;
+    overflow: hidden;
+
+}
+
+.poster-title {
+    color: black;
+    font-size: 18px;
+    
+    top: 210px;
+    text-align: center;
+    width: 180px;
+   
+    position: absolute;
+    overflow: hidden;
+
+}
+
+
+/* poster end */
+
+/* volum */
+.vol {
+    position: absolute;
+    top: 91.5%;
+    left: 109%;
+    transform: rotate(270deg);
+}
+
+#volum {
+    position: relative;
+    width: 70px;
+    height: 10px;
+    background: #8dcd8e;
+    -webkit-appearance: none;
+    outline: none;
+    border-radius: 4px;
+}
+
+#volum::-webkit-slider-thumb {
+
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    /* background: #5bbe5b; */
+    box-shadow: 0px 0px 2px #222;
+    background: #b5eb97;
+    cursor: pointer;
+}

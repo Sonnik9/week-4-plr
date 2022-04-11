@@ -111,6 +111,8 @@ let counterArr = [];
 let column1 = document.querySelector('ul');
 
 let openBar = document.querySelector('.btn');
+console.log(openBar)
+let closeBar = document.querySelector('.btn-add');
 let sideBar = document.querySelector('.sidebar');
 let span1 = document.querySelector('.f-sp');
 let span2 = document.querySelector('.s-sp');
@@ -121,6 +123,7 @@ let posterTitle = document.querySelector('.poster-title');
 
 sideBar.addEventListener('click', eventBar)
 openBar.addEventListener('click', open);
+closeBar.addEventListener('click', closeeBar);
 
 data.forEach((el, ind) =>  {
 
@@ -185,14 +188,20 @@ function eventBar(e) {
 
 }
 
-
-function open() {
-
+function enginBar() {
     sideBar.classList.toggle('active');
     span1.classList.toggle('active'); 
     span2.classList.toggle('active'); 
     span3.classList.toggle('active'); 
+}
 
+function open() {
+    enginBar()
+}
+
+function closeeBar() {
+    enginBar()
+   
 }
 
 
@@ -201,6 +210,20 @@ function open() {
 let audio = new Audio();
 audio.src = data[index].url;
 audio.ontimeupdate = progressUpdate;
+
+   function editionPrevNext() {
+    audio.src = data[index].url;
+    audio.play();
+    playy.style.display = 'none';
+    stopp.style.display = 'inline';
+      
+    m = index;
+    
+    posterItem.src = data[index].poster;
+    posterAutor.innerHTML = 'Trak' + (index+1) + ' ' + data[index].autor;
+    posterTitle.innerHTML = data[index].title;
+        
+   } 
 
 
    function prevOn() {
@@ -211,18 +234,7 @@ audio.ontimeupdate = progressUpdate;
     } 
 
        index--;
-       audio.src = data[index].url;
-       audio.play();
-
-       playy.style.display = 'none';
-       stopp.style.display = 'inline';
-        counterArr.push(index);
-      
-        m = counterArr[counterArr.length-1];
-        posterItem.src = data[index].poster;
-        posterAutor.innerHTML = 'Trak' + (index+1) + ' ' + data[index].autor;
-        posterTitle.innerHTML = data[index].title;
-           
+       editionPrevNext()
       
             for (x = 0; x < data.length; x++) {
                 if(x == index && x !== data.length-1) {
@@ -275,17 +287,7 @@ audio.ontimeupdate = progressUpdate;
          index= -1;
      }     
         index++;
-        audio.src = data[index].url;
-        audio.play();
-        counterArr.push(index);
-        m = counterArr[counterArr.length-1];
-        posterItem.src = data[index].poster;
-        posterAutor.innerHTML = 'Trak' + (index+1) + ' ' + data[index].autor;
-        posterTitle.innerHTML = data[index].title;
-        console.log(index)
-   
-        playy.style.display = 'none';
-        stopp.style.display = 'inline';
+       editionPrevNext()
 
         for (x = 0; x < data.length; x++) {
          

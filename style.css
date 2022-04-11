@@ -1,7 +1,17 @@
+html {
+    width: 100%;
+    height: 100%;
+
+}
+
+
 body {
 
     background: url('./имж/фон2.jpg') no-repeat;
-    background-size: 100%;
+    width: 100%;
+    height: 100%;
+
+    background-size: 100% 100%;
     /* height: 100%; */
       
     
@@ -25,11 +35,17 @@ body {
 .progress {
     position: absolute;
     width: 136%;
+    /* width: 300px; */
     margin: 110px auto;
+    
     height: 10px;
-    /* background: #000; */
+   
     border-radius: 5px;
     cursor: pointer;
+
+    /* transform: rotate(270deg); */
+
+    
     
 
 }
@@ -53,9 +69,11 @@ progress::-webkit-progress-value {
     border-radius: 40px;
     width: 500px;
     height: 80px;
+    /* margin-left: 160px; */
   
     
     position: relative;
+    /* transform: rotate(270deg); */
 }
 .prev {
     content: '';
@@ -101,6 +119,7 @@ progress::-webkit-progress-value {
     border: none;
     left: 56%;
     top: 84.5%;
+    
    
     
    
@@ -120,6 +139,7 @@ progress::-webkit-progress-value {
     border: none;
     left: 56%;
     top: 84.5%;
+    
 
     width: 105px;
     height: 105px;
@@ -135,6 +155,7 @@ progress::-webkit-progress-value {
     border: none;
     left: 56%;
     top: 84.5%;
+    
     cursor: pointer;
    
     
@@ -194,6 +215,8 @@ progress::-webkit-progress-value {
     padding-bottom: 10px;
     overflow-y: auto;
     overflow-x: hidden;
+    z-index: 3;
+    
     
 
     
@@ -246,11 +269,14 @@ left: 10px;
 
     position: relative;
 }
-
+.btn1-box {
+    position: relative;
+}
 .btn {
 
     position: absolute;
     left: -92px;
+    
     top: -65px;
     background: #E0E5EA;
     padding: 10px;
@@ -307,13 +333,58 @@ transition: all 600ms;
 
 }
 
+.f1-sp {
+   
+    position: absolute;
+    
+transform: rotate(45deg);
+top: 34%;
+left: 5%;
+width: 35px;
+
+
+    display: block;
+    width: 25px;
+    height: 4px;
+    background-color: #666;
+    margin: 4px;
+
+
+   -moz-transition: all 600ms;
+   -webkit-transition: all 600ms;
+    transition: all 600ms;
+
+
+}
+
+.t1-sp {
+    transform: rotate(-45deg);
+    width: 40px;
+    bottom: 33%;
+    left: 6%;
+    content: '';
+    position: absolute;
+    color: #fff;;
+    
+    -moz-transition: all 600ms;
+    -webkit-transition: all 600ms;
+    transition: all 600ms;
+
+    display: block;
+    width: 25px;
+    height: 4px;
+    background-color: #666;
+    margin: 4px;
+
+}
+
 .t-sp.active {
     transform: rotate(-45deg);
     width: 35px;
     bottom: 37%;
     left: 9%;
 
-    content: '';
+    
     position: absolute;
 
     
@@ -325,15 +396,35 @@ transition: all 600ms;
 
 }
 
+
+.btn-add {
+position: absolute;
+left: 172px;
+top: 25px;
+background: #E0E5EA;
+padding: 10px;
+border-radius: 12px;
+cursor: pointer;
+width: 15px;
+height: 15px;
+}
+
+
+.btn-add:hover {
+    opacity: 0.9;  
+}
+
+
+
 /* poster start */
 
 .wrapper {
     display: flex;
-    width: 500px;
-    margin: 100px 180px;
+    width: 100%;
+    margin: 0px auto;
     position: absolute;
-    left: 28%;
-    top: -15%;
+    /* left: 450px; */
+    /* top: -15%; */
     /* overflow: hidden; */
 }
 .row {
@@ -352,7 +443,7 @@ transition: all 600ms;
 
 
 .wrap {
-
+    margin: 100px auto;
     width: 200px;
     height: 235px;
     background-color: #e1e1e1;
@@ -399,6 +490,7 @@ transition: all 600ms;
     position: absolute;
     top: 91.5%;
     left: 109%;
+    
     transform: rotate(270deg);
 }
 
@@ -423,3 +515,71 @@ transition: all 600ms;
     background: #b5eb97;
     cursor: pointer;
 }
+
+
+
+@media (max-width: 1200px) {
+    .container1 {
+        max-width: 970px;
+    } 
+ }
+
+ @media (max-width: 992px) {
+    body{
+        /* background-size: 930px 1100px; */
+    } 
+
+    .progress {
+        display: none;
+    }
+
+
+    .container1 {
+        max-width: 750px;
+    } 
+ }
+ 
+
+ @media (max-width: 710px) {
+    body{
+        /* background-size: 710px 1000px; */
+        background: #666 ;
+    } 
+
+    .wrapper {
+        display: none;
+    }
+
+    .wrap-player {
+        /* margin-bottom: 30%; */
+        transform: rotate(270deg);
+        margin-left: 160px;
+    }
+
+    .play {
+        top: 77.5%;
+    }
+
+
+    .bufer {
+        top: 77.5%;
+    }
+
+    .stop {
+        top: 77.5%;
+    }
+
+    .btn {
+        left: 152px;
+
+    }
+
+    .vol {
+
+        left: 79%;
+
+    }
+
+
+    
+ }

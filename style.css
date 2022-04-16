@@ -1,93 +1,56 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;   
+}
+
 html {
     width: 100%;
     height: 100%;
-
-}
-
-
-body {
-
     background: url('./имж/фон2.jpg') no-repeat;
     width: 100%;
     height: 100%;
-
-    background-size: 100% 100%;
-    /* height: 100%; */
-      
-    
-    
 }
-
 
 .container {
     display: flex;
+    width: 100%; 
     justify-content: space-around;
-    align-items: flex-end;
-    width: 500px;
-    margin: -60px auto;
-    position: relative;
-    height: 600px;
-    margin-bottom: 100px;
-
-    
-}
-
-.progress {
-    position: absolute;
-    width: 136%;
-    /* width: 300px; */
-    margin: 110px auto;
-    
-    height: 10px;
    
-    border-radius: 5px;
-    cursor: pointer;
-
-    /* transform: rotate(270deg); */
-
-    
-    
-
 }
 
-
-progress::-webkit-progress-bar {
-    background: #e1e1e1;
+.box {
+    width: 280px;
 }
 
-progress::-webkit-progress-value {
-    background: #68b275;;
-
+.boxforoptions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
-
 
 .wrap-player {
     display: flex;
     align-items: center;
     justify-content: space-around;
     background: #e1e1e1;
-    border-radius: 40px;
-    width: 500px;
-    height: 80px;
-    /* margin-left: 160px; */
-  
-    
+    border-radius: 20px;
+    width: 250px;
+    height: 40px;       
     position: relative;
-    /* transform: rotate(270deg); */
 }
+
 .prev {
-    content: '';
-    
+    content: '';    
     border: none;
     position: absolute;
-    left: 10%;
-    
-   
+    left: 7%;    
     color: #fff;
     font-size: 23px;
-    width: 54px;
-    height: 54px;
-    
+    width: 27px;
+    height: 27px;    
     background: url('./имж/icon-set-player-124657.png');
     background-position: 173px 566px;
     background-size: 320%;
@@ -95,40 +58,31 @@ progress::-webkit-progress-value {
 }
 
 .reset {
-    content: '';
-    
+    content: '';    
     border: none;
     position: absolute;
-    left: 30%;
-   
-    width: 54px;
-    height: 54px;
-    
+    left: 27%; 
+    top: 16%;  
+    width: 27px;
+    height: 27px;    
     background: url('./имж/icon-set-player-124657.png');
-    background-position: 0px 507px;
+    background-position: 0px 536px;
     background-size: 320%;
     cursor: pointer;
 }
-
-
-
 
 .play {
     content: '';
     position: absolute;
     border: none;
-    left: 56%;
-    top: 84.5%;
-    
-   
-    
-   
-    width: 105px;
-    height: 105px;
+    left: 52%;
+    top: -19.1%;  
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     background-color: #e1e1e1;
     background: url('./имж/icon-set-player-124657.png');
-    background-position: 235px 475px;
+    background-position: 316px 755px;
     background-size: 350%;
     z-index: 2;
     cursor: pointer;
@@ -137,103 +91,70 @@ progress::-webkit-progress-value {
 .bufer {
     position: absolute;
     border: none;
-    left: 56%;
-    top: 84.5%;
-    
-
-    width: 105px;
-    height: 105px;
+    left: 52%;
+    top: -15.1%;  
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     background-color: #e1e1e1;
-    cursor: pointer;
-    
-
+    cursor: pointer;   
 }
+
 .stop {
     content: '';
     position: absolute;
     border: none;
-    left: 56%;
-    top: 84.5%;
-    
-    cursor: pointer;
-   
-    
-   
-    width: 105px;
-    height: 105px;
+    left: 52%;
+    top: -19.1%;
+    cursor: pointer; 
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     background-color: #e1e1e1;
     background: url('./имж/icon-set-player-124657.png');
-    background-position: -131px 348px;
+    background-position: 316px 815px;
     background-size: 350%;
-    z-index: 2;
-   
-  
+    z-index: 2;  
     display: none;
 }
+
 .next {
-    content: '';
-  
+    content: '';  
     border: none;
     position: absolute;
-    left: 80%;
-    cursor: pointer;
-    
+    left: 83%;
+    cursor: pointer;    
     background-color: #666;
     color: #fff;
     font-size: 23px;
-    width: 54px;
-    height: 54px;
+    width: 27px;
+    height: 27px;
     background: url('./имж/icon-set-player-124657.png');
-    background-position: 54px 566px;
-    background-size: 320%;
-    
+    background-position: 27px 566px;
+    background-size: 320%;    
 }
 
-
-
-/* for playList */
-
-*{
-
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-   
-}
+/* for playList start*/
 
 .sidebar {
     position: fixed;
-    width: 230px;
+    width: 250px;
     height: 90%;
     background: #57626F;
     border: 4px solid #E0E5E4;
     border-radius: 10px;
     left: -260px;
     top: 10px;
-    padding-bottom: 10px;
-    overflow-y: auto;
-    overflow-x: hidden;
+    padding-bottom: 10px;  
     z-index: 3;
-    
-    
-
-    
-
     -moz-transition: all 600ms;
     -webkit-transition: all 600ms;
-    transition: all 600ms;
-
-    /* display: none; */
+    transition: all 600ms;       
 }
 
 .sidebar.active {
-left: 10px;
-
-
+    left: 20px;
 }
-
 
 .menu-title {
     text-align: center;
@@ -244,117 +165,63 @@ left: 10px;
 }
 
 .list {
-    /* position: relative; */
-
-    width: 75%;
+    width: 80%;
+    color: #e0edfa;
     margin-left: 10%;
     font-size: 1.1em;
     list-style: none;
     padding: 15px 10px;
-    color: #e0edfa;
     cursor: pointer;
-    overflow: hidden;
-    
- 
-    
+    overflow: hidden; 
 }
 
+ul {
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    height: 85%;
+}
 
+.sidebar ul li a {
+    color: #dfe5eb;
+    text-decoration: none;
+}
 
-/* .sidebar ul li:hover {
+.sidebar ul li a:hover {
     color: #59e9df;
-} */
-
-.btn-box {
-
-    position: relative;
 }
-.btn1-box {
-    position: relative;
-}
+
 .btn {
-
     position: absolute;
-    left: -92px;
-    
-    top: -65px;
+    left: 270px;
+    top: 20px;
     background: #E0E5EA;
     padding: 10px;
     border-radius: 12px;
     cursor: pointer;
     width: 32px;
     height: 30px;
-
+    cursor: pointer;
 }
 
-.btn:hover {
-
-    background: #556270;
+.btn1-box {
+    position: relative;
 }
 
-.btn:hover span {
-
-    background: #fafafa;
-
-}
-
-.btn span {
-  
-
+.f1-sp {   
+    position: absolute;    
+    transform: rotate(45deg);
+    top: 34%;
+    left: 5%;
+    width: 35px;
     display: block;
     width: 25px;
     height: 4px;
     background-color: #666;
     margin: 4px;
-}
-.s-sp.active {
-    display: none;
-    
-    -moz-transition: all 600ms;
-    -webkit-transition: all 600ms;
-    transition: all 600ms;
-
-}
-.f-sp.active {
-    content: '';
-    position: absolute;
-    
-transform: rotate(45deg);
-top: 37%;
-left: 9%;
-width: 35px;
-
-
--moz-transition: all 600ms;
--webkit-transition: all 600ms;
-transition: all 600ms;
-
-
-
-}
-
-.f1-sp {
-   
-    position: absolute;
-    
-transform: rotate(45deg);
-top: 34%;
-left: 5%;
-width: 35px;
-
-
-    display: block;
-    width: 25px;
-    height: 4px;
-    background-color: #666;
-    margin: 4px;
-
-
    -moz-transition: all 600ms;
    -webkit-transition: all 600ms;
     transition: all 600ms;
-
-
 }
 
 .t1-sp {
@@ -364,18 +231,66 @@ width: 35px;
     left: 6%;
     content: '';
     position: absolute;
-    color: #fff;;
-    
+    color: #fff;       
     -moz-transition: all 600ms;
     -webkit-transition: all 600ms;
     transition: all 600ms;
-
     display: block;
     width: 25px;
     height: 4px;
     background-color: #666;
     margin: 4px;
+}
 
+
+.btn-add {
+    position: absolute;
+    left: 190px;
+    top: 25px;
+    background: #E0E5EA;
+    padding: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+}  
+    
+.btn-add:hover {
+    opacity: 0.9;  
+}
+    
+.btn:hover {
+    background: #556270;
+}
+
+.btn:hover span {
+    background: #fafafa;
+}
+
+.btn span {
+    display: block;
+    width: 25px;
+    height: 4px;
+    background-color: #666;
+    margin: 4px;
+}
+
+.s-sp.active {
+    display: none;    
+    -moz-transition: all 600ms;
+    -webkit-transition: all 600ms;
+    transition: all 600ms;
+}
+
+.f-sp.active {
+    position: absolute;    
+    transform: rotate(45deg);
+    top: 37%;
+    left: 9%;
+    width: 35px;
+    -moz-transition: all 600ms;
+    -webkit-transition: all 600ms;
+    transition: all 600ms;
 }
 
 .t-sp.active {
@@ -383,67 +298,29 @@ width: 35px;
     width: 35px;
     bottom: 37%;
     left: 9%;
-
-    
-    position: absolute;
-
-    
+    position: absolute;    
     -moz-transition: all 600ms;
     -webkit-transition: all 600ms;
-    transition: all 600ms;
-
-    
-
+    transition: all 600ms;  
 }
-
-
-.btn-add {
-position: absolute;
-left: 172px;
-top: 25px;
-background: #E0E5EA;
-padding: 10px;
-border-radius: 12px;
-cursor: pointer;
-width: 15px;
-height: 15px;
-}
-
-
-.btn-add:hover {
-    opacity: 0.9;  
-}
-
-
+/* for playList end*/
 
 /* poster start */
 
-.wrapper {
+.row { 
     display: flex;
-    width: 100%;
-    margin: 0px auto;
-    position: absolute;
-    /* left: 450px; */
-    /* top: -15%; */
-    /* overflow: hidden; */
-}
-.row {
-   
-    
-    display: flex;
-    position: absolute;
-    
-}
-.item {
-    
-    width: 150px;
-    height: 150px;
-   
+    position: absolute;    
 }
 
+.item {    
+    width: 150px;
+    height: 150px;   
+}
 
 .wrap {
-    margin: 100px auto;
+    margin: 0px auto;
+    margin-top: 130px;
+    margin-bottom: 45px;
     width: 200px;
     height: 235px;
     background-color: #e1e1e1;
@@ -452,51 +329,58 @@ height: 15px;
     justify-content: space-around;
     align-items: center;
     padding-bottom: 20px;
-    position: relative;
-   
+    position: relative;   
 }
 
 .poster-autor {
     color: black;
-    font-size: 16px;
-    
+    font-size: 16px;    
     top: 14px; 
     text-align: center;
-    width: 180px;
-   
+    width: 180px;   
     position: absolute;
     overflow: hidden;
-
 }
 
 .poster-title {
     color: black;
-    font-size: 18px;
-    
+    font-size: 18px;    
     top: 210px;
     text-align: center;
-    width: 180px;
-   
+    width: 180px;   
     position: absolute;
     overflow: hidden;
+}
+/* poster end */
 
+/* for progress bar start */
+
+.progress {
+   
+    width: 250px;
+    margin: 0px auto;  
+    margin-bottom: 20px;  
+    height: 10px;   
+    border-radius: 5px;
+    cursor: pointer; 
 }
 
+progress::-webkit-progress-bar {
+    background: #e1e1e1;
+}
 
-/* poster end */
+progress::-webkit-progress-value {
+    background: #68b275;
+}
+/* for progress bar end */
 
 /* volum */
 .vol {
-    position: absolute;
-    top: 91.5%;
-    left: 109%;
-    
-    transform: rotate(270deg);
+    margin-top: 25px;
 }
 
 #volum {
-    position: relative;
-    width: 70px;
+    width: 250px;
     height: 10px;
     background: #8dcd8e;
     -webkit-appearance: none;
@@ -505,81 +389,11 @@ height: 15px;
 }
 
 #volum::-webkit-slider-thumb {
-
     -webkit-appearance: none;
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    /* background: #5bbe5b; */
     box-shadow: 0px 0px 2px #222;
     background: #b5eb97;
     cursor: pointer;
 }
-
-
-
-@media (max-width: 1200px) {
-    .container1 {
-        max-width: 970px;
-    } 
- }
-
- @media (max-width: 992px) {
-    body{
-        /* background-size: 930px 1100px; */
-    } 
-
-    .progress {
-        display: none;
-    }
-
-
-    .container1 {
-        max-width: 750px;
-    } 
- }
- 
-
- @media (max-width: 710px) {
-    body{
-        /* background-size: 710px 1000px; */
-        background: #666 ;
-    } 
-
-    .wrapper {
-        display: none;
-    }
-
-    .wrap-player {
-        /* margin-bottom: 30%; */
-        transform: rotate(270deg);
-        margin-left: 160px;
-    }
-
-    .play {
-        top: 77.5%;
-    }
-
-
-    .bufer {
-        top: 77.5%;
-    }
-
-    .stop {
-        top: 77.5%;
-    }
-
-    .btn {
-        left: 152px;
-
-    }
-
-    .vol {
-
-        left: 79%;
-
-    }
-
-
-    
- }

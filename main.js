@@ -1,7 +1,5 @@
 
-
 const data = [
-
     
        {
         url:'./муз/mylene_farmer_milen_farmer_-_xxl_\(z2.fm\).mp3',
@@ -89,6 +87,10 @@ let progressVolum = document.querySelector('#volum');
 let index = 0;
 let z = 0;
 let y = 0;
+let d;
+let c;
+let k;
+let t = 0;
 
 prev.addEventListener('click', prevOn);
 resett.addEventListener('click', resetOn);
@@ -105,13 +107,10 @@ let i;
 let x;
 let green = '#9ee69e';
 let grey = '#e0edfa';
-
 let m = 0;
-let counterArr = [];
-let column1 = document.querySelector('ul');
 
+let column1 = document.querySelector('ul');
 let openBar = document.querySelector('.btn');
-console.log(openBar)
 let closeBar = document.querySelector('.btn-add');
 let sideBar = document.querySelector('.sidebar');
 let span1 = document.querySelector('.f-sp');
@@ -134,8 +133,7 @@ data.forEach((el, ind) =>  {
     if(ind==0 && z==0)
     li1.style.color = green;
 
-})
-
+});
 
 let li2 = document.querySelectorAll('li');
 posterItem.src = data[0].poster;
@@ -147,41 +145,43 @@ function eventBar(e) {
     if(e.target.tagName == 'LI') {
        for (i = 0; i < data.length; i++) {
             
-           if(e.target.textContent == data[i].autor + '  ' + data[i].title) {
+            if(e.target.textContent == data[i].autor + '  ' + data[i].title) {
                posterItem.src = data[i].poster;
                posterAutor.innerHTML = 'Trak' + (i+1) + ' ' + data[i].autor;
                posterTitle.innerHTML = data[i].title;
-               console.log(i)
                audio.src = data[i].url;
-               audio.play();
+               t=1;
+               setTimeout(
+                  () => {
+                    audio .play();
+                    k=1;
+         
+                  },
+                  100
+                 );
                index = i;
                playy.style.display = 'none';
                stopp.style.display = 'inline';
 
-                if(i !== 0) 
-                li2[0].style.color = grey; 
-                else 
-                li2[0].style.color = green;
+               if(i !== 0) 
+                   li2[0].style.color = grey; 
+               else 
+                   li2[0].style.color = green;
 
-                    if(m == index) 
-                    li2[index].style.color = green;
-                    
-                    else 
-                    {li2[index].style.color = green;
-                        z = 1;
-                    li2[m].style.color = grey;
-
-                    }
-              
+                if(m == index) 
+                   li2[index].style.color = green;
+                   
+                else {
+                   li2[index].style.color = green;
+                   z = 1;
+                   li2[m].style.color = grey;
+                }             
             }
 
-
-            else 
-               {li2[i].style.color = grey;
-            
-               z = 1; 
-           
-               }
+            else {
+               li2[i].style.color = grey;            
+               z = 1;
+            }
         }
     
     }
@@ -200,10 +200,8 @@ function open() {
 }
 
 function closeeBar() {
-    enginBar()
-   
+    enginBar()   
 }
-
 
 // for playList end
 
@@ -211,146 +209,154 @@ let audio = new Audio();
 audio.src = data[index].url;
 audio.ontimeupdate = progressUpdate;
 
-   function editionPrevNext() {
+
+function editionPrevNext() {
     audio.src = data[index].url;
-    audio.play();
+    progresss.value = 0;   
+    t=1;
+    setTimeout(
+        () => {
+          audio .play();
+          k=1;
+         
+        },
+          100
+      );
     playy.style.display = 'none';
-    stopp.style.display = 'inline';
-      
-    m = index;
-    
+    stopp.style.display = 'inline';      
+    m = index;    
     posterItem.src = data[index].poster;
     posterAutor.innerHTML = 'Trak' + (index+1) + ' ' + data[index].autor;
-    posterTitle.innerHTML = data[index].title;
-        
+    posterTitle.innerHTML = data[index].title;        
    } 
 
 
-   function prevOn() {
-
-   
+function prevOn() {
     if(index == 0) {
-        index = data.length;
-    } 
-
-       index--;
-       editionPrevNext()
-      
-            for (x = 0; x < data.length; x++) {
-                if(x == index && x !== data.length-1) {
-                    li2[x].style.color = green;
-                    li2[x+1].style.color = grey;
-                    z=1;
-                
-                }
-
-                else if(x == index && x == data.length-1) {
-
-                    li2[x].style.color = green;
-                    li2[0].style.color = grey;
-                    z=1;
-                
-                }
-           
-            }
-               
+      index = data.length;
     }
-  
-   function playOn() {
-       
-       audio.play();
-       playy.style.display = 'none';
-       stopp.style.display = 'inline';
-
-   }
+     index--;
+     editionPrevNext()
     
-   function resetOn() {
-       audio.src = data[index].url;
-       audio.pause();
-       progresss.value = 0;
-       playy.style.display = 'inline';
-       stopp.style.display = 'none';
+          for (x = 0; x < data.length; x++) {
+              if(x == index && x !== data.length-1) {
+                  li2[x].style.color = green;
+                  li2[x+1].style.color = grey;
+                  z=1;                
+              }
+              else if(x == index && x == data.length-1) {
+                  li2[x].style.color = green;
+                  li2[0].style.color = grey;
+                  z=1;                
+              }           
+          }               
+  }
 
-   }
-   
-   function pauseOn() {
+function playOn() {       
+     audio.play();
+     playy.style.display = 'none';
+     stopp.style.display = 'inline';
+ }
+  
+function resetOn() {
+     t=1;
+     audio.src = data[index].url;
+     progresss.value = 0;
+     setTimeout(
+      () => {
+        audio.play();
+        audio.pause();
+        k=1;
+       
+      },
+        100
+    );
+     playy.style.display = 'inline';
+     stopp.style.display = 'none';
+ }
+ 
+function pauseOn() {
     audio.pause();
-
     playy.style.display = 'inline';
     stopp.style.display = 'none';
-
-   }
-   
-   function nextOn() {
-
-     if(index == data.length-1) {
-         index= -1;
-     }     
-        index++;
-       editionPrevNext()
-
-        for (x = 0; x < data.length; x++) {
-         
-            if(x == index && x!==0) {
-                li2[x].style.color = green;
-                li2[x-1].style.color = grey;
-                z=1;
-
-            }
-
-            else if(x == index && x == 0) {
-
-                    li2[x].style.color = green;
-                    li2[data.length-1].style.color = grey;
-                    z=1;
-
-                }
-        }
-
-    }
-   
-   function progressUpdate() {
-     let d = audio.duration;
-     let c = audio.currentTime;
-     progresss.value = (100*c)/d;
-         if(progresss.value == 100) {
-            if(index == data.length-1) {
-               
-                li2[data.length-1].style.color = grey;
-                index= -1;
-            } 
-             index++;
-             audio.src = data[index].url;
-             audio.play();
-             li2[index].style.color = green;
-
-             posterItem.src = data[index].poster;
-             posterAutor.innerHTML = 'Trak' + (index+1) + ' ' + data[index].autor;
-             posterTitle.innerHTML = data[index].title;
-
-               if(index!==0)
-             li2[index-1].style.color = grey;
-         }
-   }
-
-   function audioRew(e) {
-       let w = this.offsetWidth;
-       let o = e.offsetX;
-       this.value = 100*o/w;
-       audio.pause();
-       audio.currentTime = audio.duration*(o/w);
-       audio.play();
-
-       playy.style.display = 'none';
-       stopp.style.display = 'inline';
-   }
-
-   function chengeVol() {
-       let v = this.value;
-       audio.volume = v/100;
-   }
-
-
-
-   
+ }
+ 
+function nextOn() {
   
+   if(index == data.length-1) {
+       index= -1;
+   }     
+      index++;
+      editionPrevNext();
+    
+    for (x = 0; x < data.length; x++) {
+       
+        if(x == index && x!==0) {
+            li2[x].style.color = green;
+            li2[x-1].style.color = grey;
+            z=1;
+        }
+        else if(x == index && x == 0) {
+            li2[x].style.color = green;
+            li2[data.length-1].style.color = grey;
+            z=1;
+        }
+    }
+
+}
+ 
+function progressUpdate() {
+   d = (audio.duration);
+   c = (audio.currentTime);
+ 
+   if(t==0) {
+      progresss.value = (100*c)/d;
+   }
+   if(k==1) {
+      progresss.value = (100*c)/d;
+   }
+   k=0;
+   t=0;
+  
+   if(progresss.value == 100) {
+      progresss.value = 0;
+      if(index == data.length-1) {
+         
+          li2[data.length-1].style.color = grey;
+          index= -1;
+      } 
+       index++;
+       audio.src = data[index].url;     
+       t=1
+       setTimeout(
+          () => {
+            audio .play();
+            k=1;
+   
+          },
+          200
+         );
+           
+       li2[index].style.color = green;
+       posterItem.src = data[index].poster;
+       posterAutor.innerHTML = 'Trak' + (index+1) + ' ' + data[index].autor;
+       posterTitle.innerHTML = data[index].title;
+         if(index!==0)
+       li2[index-1].style.color = grey;
+   }
+ }
+
+function audioRew(e) {
+    let w = this.offsetWidth;
+    let o = e.offsetX;
+    this.value = 100*o/w;
+    audio.pause();
+    audio.currentTime = audio.duration*(o/w);
+    audio.play();
+    playy.style.display = 'none';
+    stopp.style.display = 'inline';
+ }
+function chengeVol() {
+    let v = this.value;
+    audio.volume = v/100;
+ }

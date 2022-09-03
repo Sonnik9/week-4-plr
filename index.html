@@ -5,91 +5,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player</title>
-
+    <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="./style.css">
-    <script defer src="./main.js"></script>
-   
+    <script defer src="./main.js"></script> 
+    
 
 </head>
-<body>
-
-    
-    <div class="sidebar">
-        
+<body>        
+    <div class="sidebar">  
+        <div class="btn1-box">
+            <div class="btn-add">
+                <span class="f1-sp"></span>
+                <span class="t1-sp"></span>
+            </div>
+        </div>
+        <div class="btn">
+            <span class="f-sp"></span>
+            <span class="s-sp"></span>
+            <span class="t-sp"></span>
+        </div>
+        <div class="menu-title">PlayList</div>
         <ul id="ul">
-            <div class="menu-title">PlayList</div>
-            
+                      
         </ul>
 
-
-
-
-
-
     </div>
 
-
-       
-    <div class="wrapper">
-       
-        
-        
-        <div class="wrap">
-            <div class="poster-autor"></div>
-       
-           
-    
-    
-            <div class="row">
-                <img class="item" src="" alt="">
-    
-            </div>
-
-            <div class="poster-title"></div>
-    
-           
-    
-    
-       
-        </div>
-       
-    </div>
-    
-   
     <div class="container">
+        <div class="box">              
+            <div class="wrap">
+                <div class="poster-autor">
+                </div>        
+               
+                <div class="row">
+                    <img class="item" src="" alt="">        
+                </div>
 
- 
-
-        <div class="btn-box">
-            <div class="btn">
-                <span class="f-sp"></span>
-                <span class="s-sp"></span>
-                <span class="t-sp"></span>
+                <div class="poster-title">
+                </div>
+                   
             </div>
-        </div>
-       
-        <div class="wrap-player">
-          <button class="prev"></button>
-          <button class="reset"></button>
-          
-          
-          <button class="next"></button>
-        </div>
 
-      
-
-        <button class="play"></button>
-        <button class="stop"></button>
-        <div class="bufer"></div>
-        <progress class="progress" max="100" value="0"></progress>
-
-        
-    <div class="vol">
-        <input type="range" id="volum" value="" min="0" max="100">
-    </div>
+            <div class="boxforoptions">       
     
+                <progress class="progress" max="100" value=""></progress>
+                <div class="wrap-player">
+                   <button class="prev"></button>
+                   <button class="reset"></button>             
+                   <button class="next"></button>
+
+
+                   <button class="play"></button>
+                   <button class="stop"></button>
+                   <div class="bufer"></div>
+
+                </div>
+
+                <div class="vol">
+                    <input type="range" id="volum" value="" min="0" max="100">
+                 </div>   
+
+            </div>   
+   
+        </div> <!-- box-->
+      
     </div>
 
-   
 </body>
 </html>
